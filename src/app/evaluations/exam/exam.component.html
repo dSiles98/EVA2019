@@ -1,0 +1,29 @@
+<div class="contain">
+  <div class="card">
+    <div class="card-body">
+      <div class="examenes">
+        <div class="text-center">
+          <h2>Examen de Computación Básica</h2>
+        </div>
+        <label for="">Comandos de voz: [siguiente] [anterior] [primero] [segundo] [tercero] [entregar] seguido de [cambio]</label><br>
+        <div class="text-center">
+          <label id="instruccion"><strong>{{text}}</strong></label>
+        </div> 
+        <br>
+
+        <form #formulario class="user" action="">
+          <div  *ngFor="let question of questions.preguntas" class="preguntas">
+            <h6>{{question.contenido}}</h6>
+            <div *ngFor="let opt of question.respuestas" class="options">
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="{{opt}}" name="{{question.contenido}}">
+                <label class="custom-control-label" for="{{opt}}">{{opt}}</label>
+              </div>
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Página de Inicio <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/examenes">Examenes</a>
+      </li>
+      <li class="chat">
+        
+      </li>
+    </ul>
+    <a *ngIf="isnotLogged" class="nav-link" href="/login" id="navbarDropdown" role="button" aria-expanded="false">
+      Ingresar
+    </a>
+    <a *ngIf="isnotLogged" href="/registro">
+    <button type="button" class="btn btn-outline-primary">Registrarse</button>
+    </a>
+    <a href="#" *ngIf="isLogged" disable="true" class="" style="color:white">{{user.email}}</a>
+    <a *ngIf="isLogged" href=""(click)="onLogout()" class="nav-link">Cerrar Sesión</a>
+  </div>
+</nav>
+<body>
+  <router-outlet></router-outlet>
+  <app-f-button></app-f-button>
+</body>
